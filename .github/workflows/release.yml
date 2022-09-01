@@ -1,5 +1,4 @@
-name: springboot ci/cd
-
+name: springboot CI/CD
 on:
   push:
     branches:
