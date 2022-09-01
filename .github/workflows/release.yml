@@ -1,4 +1,4 @@
-name: Node.js CI
+name: springboot ci/cd
 
 on:
   push:
@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: making jar
-        run: mvn clean install
+        run: ./mvnw clean install
       - name: docker login to github container registry
         run: docker login ${{ secrets.REGISTRY }} -u ${{ secrets.REGISTRY_USERNAME }} --password ${{ secrets.REGISTRY_TOKEN }}
       - name: docker build
