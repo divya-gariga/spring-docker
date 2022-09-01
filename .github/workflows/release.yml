@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: docker login to github container registry
-        run: echo ${{ secrets.REGISTRY_TOKEN }} | docker login ${{ secrets.REGISTRY }} -u ${{ secrets.REGISTRY_USERNAME }} --password-stdin
+        run: echo "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" | docker login ghcr.io -u ${{ secrets.REGISTRY_USERNAME }} --password-stdin
       - name: docker build
         run: docker build . -t ${{ secrets.REGISTRY }}/${{ secrets.REGISTRY_USERNAME }}/spring-docker/spring-hello-world-app:latest
       - name: docker push
